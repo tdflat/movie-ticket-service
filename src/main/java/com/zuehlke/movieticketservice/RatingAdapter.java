@@ -7,7 +7,8 @@ public class RatingAdapter {
 
     private final RatingServiceApiClient ratingServiceApiClient;
     public RatingAdapter(String url) {
-        ratingServiceApiClient = RestClientFactory.createClient(url, RatingServiceApiClient.class);
+        //TODO define fallback
+        ratingServiceApiClient = RestClientFactory.createRatingServiceClient(url);
     }
 
     public List<Rating> getRatingsById(long id) {
